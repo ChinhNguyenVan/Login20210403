@@ -5,6 +5,8 @@
  */
 package loginsimple;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Chinh
@@ -40,6 +42,11 @@ public class Login extends javax.swing.JFrame {
         lblPassword.setText("Password");
 
         btnlogin.setText("Login");
+        btnlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnloginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,6 +87,18 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    String username,password;
+    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+        // TODO add your handling code here:
+        username = txtUsername.getText();
+        password = txtPassword.getText();
+        if(username == "admin" && password == "admin") {
+            JOptionPane.showMessageDialog(this, "Dang nhap thanh cong");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Dang nhap khong thanh cong");
+        }
+    }//GEN-LAST:event_btnloginActionPerformed
 
     /**
      * @param args the command line arguments
